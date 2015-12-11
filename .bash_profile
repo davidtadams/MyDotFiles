@@ -137,6 +137,7 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 #alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
 alias reload='source ~/.bash_profile'       # Reloads the shell with updated bash profile
 alias desk='cd ~/Desktop'                   # Go to Desktop
+alias work='cd ~/workspace'                 # Go to dev workspace
 
 #   -------------------------------
 #   3.  Git Aliases
