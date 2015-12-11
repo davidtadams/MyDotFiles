@@ -136,6 +136,7 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 #ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
 #alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
 alias reload='source ~/.bash_profile'       # Reloads the shell with updated bash profile
+alias desk='cd ~/Desktop'                   # Go to Desktop
 
 #   -------------------------------
 #   3.  Git Aliases
