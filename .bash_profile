@@ -137,12 +137,6 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 #alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
 alias reload='source ~/.bash_profile'       # Reloads the shell with updated bash profile
 
-#------ Tab completion for Lunchy ----------------
-LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
-  . $LUNCHY_DIR/lunchy-completion.bash
-fi
-
 #   -------------------------------
 #   3.  Git Aliases
 #   -------------------------------
