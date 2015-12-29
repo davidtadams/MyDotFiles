@@ -138,7 +138,7 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 alias reload='source ~/.bash_profile'       # Reloads the shell with updated bash profile
 alias desk='cd ~/Desktop'                   # Go to Desktop
 alias work='cd ~/workspace'                 # Go to dev workspace
-alias gschool='cd ~/workspace/gSchool_15_DA'  # Go to gschool repo
+alias g15='cd ~/workspace/gSchool_15_DA'    # Go to gschool repo
 
 #   -------------------------------
 #   3.  Git Aliases
