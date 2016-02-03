@@ -91,7 +91,8 @@ trap 'printf "\e[m" "$_"' DEBUG           # This resets the color after enter in
 
 #   Set Default Editor
 #   ------------------------------------------------------------
-#    export EDITOR=/usr/bin/nano
+export EDITOR=/usr/bin/vim
+alias vi=vim                               # set vim as default
 
 #   Set default blocksize for ls, df, du
 #   from this: http://hints.macworld.com/comment.php?mode=view&cid=24491
@@ -108,8 +109,8 @@ fi
 #   2.  MAKE TERMINAL BETTER
 #   -----------------------------
 
-#alias cp='cp -iv'                           # Preferred 'cp' implementation
-#alias mv='mv -iv'                           # Preferred 'mv' implementation
+alias cp='cp -iv'                           # Preferred 'cp' implementation
+alias mv='mv -iv'                           # Preferred 'mv' implementation
 #alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias ls='ls -G'                            # Preferred actual 'ls' implementation
 alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
@@ -138,15 +139,15 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 alias reload='source ~/.bash_profile'       # Reloads the shell with updated bash profile
 alias desk='cd ~/Desktop'                   # Go to Desktop
 alias work='cd ~/workspace'                 # Go to dev workspace
-alias g15='cd ~/workspace/gSchool_15_DA'    # Go to gschool repo
+alias g15='cd ~/workspace/gSchool_15_DA'      # Go to gschool repo
+alias xx='exit'                               # Exit terminal
+alias superstatic='superstatic --debug true'  # Default superstatic to show network traffic
 
 #   -------------------------------
 #   3.  Git Aliases
 #   -------------------------------
 alias gs="git status"
-
 alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-
 alias gl2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 
 #   -------------------------------
@@ -229,3 +230,19 @@ EOT
     #     #echo -e "\n${RED}DNS Configuration:$NC " ; scutil --dns
     #     echo
     # }
+
+#   ---------------------------
+#   6.  Dev language specific
+#   ---------------------------
+#   Ruby:
+#   ---------------------------------------------------------
+  # Load RVM into a shell session *as a function*
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+#   Go:
+#   ---------------------------------------------------------
+  # Go path variables
+  export GOPATH=$HOME/workspace/goWork
+  export GOROOT=/usr/local/opt/go/libexec
+  export PATH=$PATH:$GOPATH/bin
+  export PATH=$PATH:$GOROOT/bin
