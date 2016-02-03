@@ -1,11 +1,6 @@
 #  ---------------------------------------------------------------------------
 #  David Adams - Bash Profile
 #
-#  Source: https://gist.github.com/natelandau/10654137
-#          http://natelandau.com/my-mac-osx-bash_profile/
-#          http://bytebaker.com/2012/01/09/show-git-information-in-your-prompt/
-#          https://git-scm.com/docs/git-status
-#
 #  Description:  This file holds all my BASH configurations and aliases
 #
 #  Sections:
@@ -112,11 +107,10 @@ fi
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 #alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
-alias ls='ls -G'                            # Preferred actual 'ls' implementation
-alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
+alias ls='ls -GA'                            # Preferred actual 'ls' implementation
+alias ll='ls -FBlhp'                       # Preferred 'ls' implementation
+cd() { builtin cd "$@" && ls; }             # Always list directory contents upon 'cd'
 #alias less='less -FSRXc'                    # Preferred 'less' implementation
-cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
-alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                           # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels
 alias .3='cd ../../../'                     # Go back 3 directory levels
@@ -236,8 +230,9 @@ EOT
 #   ---------------------------
 #   Ruby:
 #   ---------------------------------------------------------
+
   # Load RVM into a shell session *as a function*
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+  function sourceRVM() { [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"; }
 
 #   Go:
 #   ---------------------------------------------------------
@@ -246,3 +241,10 @@ EOT
   export GOROOT=/usr/local/opt/go/libexec
   export PATH=$PATH:$GOPATH/bin
   export PATH=$PATH:$GOROOT/bin
+
+
+#  ---------------------------------------------------------------------------
+#  Sources:
+#    https://gist.github.com/natelandau/10654137
+#    https://git-scm.com/docs/git-status
+#  ---------------------------------------------------------------------------
